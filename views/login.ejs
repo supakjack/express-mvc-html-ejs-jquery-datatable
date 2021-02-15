@@ -1,112 +1,78 @@
-<%- include('partials/header'); %>
-<!-- start content page -->
-<div class="row m-0 h-100">
-  <div
-    class="col p-0 text-center d-flex justify-content-center align-items-center display-none"
-  >
-    <img src="/assets/images/login.svg" class="w-100" />
-  </div>
-  <div
-    class="col p-0 bg-custom d-flex justify-content-center align-items-center flex-column w-100"
-  >
-    <form class="w-75" action="/auth/login" method="post">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"
-          >Username</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          name="username"
-          placeholder="username"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput2" class="form-label"
-          >Password</label
-        >
-        <input
-          type="password"
-          class="form-control"
-          name="password"
-          placeholder="password"
-          required
-        />
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
+<%- include('partials/login/header'); %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-sm-12 mx-auto">
+      <div class="card pt-4">
+        <div class="card-body">
+          <div class="text-center mb-5">
+            <img
+              src="/voler/assets/images/favicon.svg"
+              height="48"
+              class="mb-4"
             />
-            <label class="form-check-label" for="flexCheckDefault">
-              Keep me logged in
-            </label>
+            <h3>Sign In</h3>
+            <p>Please sign in to continue to Voler.</p>
+          </div>
+          <form action="index.html">
+            <div class="form-group position-relative has-icon-left">
+              <label for="username">Username</label>
+              <div class="position-relative">
+                <input type="text" class="form-control" id="username" />
+                <div class="form-control-icon">
+                  <i data-feather="user"></i>
+                </div>
+              </div>
+            </div>
+            <div class="form-group position-relative has-icon-left">
+              <div class="clearfix">
+                <label for="password">Password</label>
+                <a href="auth-forgot-password.html" class="float-end">
+                  <small>Forgot password?</small>
+                </a>
+              </div>
+              <div class="position-relative">
+                <input type="password" class="form-control" id="password" />
+                <div class="form-control-icon">
+                  <i data-feather="lock"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-check clearfix my-4">
+              <div class="checkbox float-start">
+                <input
+                  type="checkbox"
+                  id="checkbox1"
+                  class="form-check-input"
+                />
+                <label for="checkbox1">Remember me</label>
+              </div>
+              <div class="float-end">
+                <a href="auth-register.html">Don't have an account?</a>
+              </div>
+            </div>
+            <div class="clearfix">
+              <button class="btn btn-primary float-end">Submit</button>
+            </div>
+          </form>
+          <div class="divider">
+            <div class="divider-text">OR</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <button class="btn btn-block mb-2 btn-primary">
+                <i data-feather="facebook"></i> Facebook
+              </button>
+            </div>
+            <div class="col-sm-6">
+              <button class="btn btn-block mb-2 btn-secondary">
+                <i data-feather="github"></i> Github
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <button
-        id="login-btn"
-        type="submit"
-        class="btn btn-custom btn-lg btn-block mt-3"
-      >
-        Login Now
-      </button>
-    </form>
+    </div>
   </div>
 </div>
-<!-- start style -->
-<style>
-  body {
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    font-family: 'Nunito Sans';
-  }
-
-  .form-control {
-    line-height: 2;
-  }
-
-  .bg-custom {
-    background-color: #6c63ff;
-  }
-
-  .btn-custom {
-    background-color: #3e3d56;
-    color: #fff;
-  }
-
-  .btn-custom:hover {
-    background-color: #33313f;
-    color: #fff;
-  }
-
-  label {
-    color: #fff;
-  }
-
-  a,
-  a:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  a,
-  a:hover {
-    text-decoration: none;
-  }
-
-  @media (max-width: 932px) {
-    .display-none {
-      display: none !important;
-    }
-  }
-</style>
-<!-- end style -->
-<!-- end content page -->
-<%- include('partials/footer'); %>
+<%- include('partials/login/footer'); %>

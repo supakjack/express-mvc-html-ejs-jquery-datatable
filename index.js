@@ -15,6 +15,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 /** set routers */
 app.use('/auth', require('./routers/auth.router'))
+app.use('/profile', require('./routers/profile.router'))
+app.use('/dashboard', require('./routers/dashboard.router'))
 
 /** error handling */
 app.use((req,res,next)=>{
